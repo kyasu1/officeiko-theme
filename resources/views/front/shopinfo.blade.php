@@ -38,8 +38,8 @@
     </div>
   </div>
   <div class="f6 f4-ns bg-washed-yellow tea-green pv1">
-    <p class="ma0 pv1 tc"><a href="http://www.saitama783.com" class="link tea-green">埼玉県質屋組合連合会加盟店</a></p>
-    <p class="ma0 pv1 tc"><a href="https://www.zenshichi.gr.jp" class="link tea-green">全国質屋組合連合会加盟店</a></p>
+    <p class="ma0 pv1 tc"><a href="http://www.saitama783.com" class="link tea-green" target="_blank">埼玉県質屋組合連合会加盟店</a></p>
+    <p class="ma0 pv1 tc"><a href="http://www.zenshichi.gr.jp" class="link tea-green" target="_blank">全国質屋組合連合会加盟店</a></p>
   </div>
   <div class="f6 f4-ns bg-washed-yellow tea-green pv1">
     <p class="ma0 pv1 tc">質屋許可 埼玉県公安委員会 第431270002100号</p>

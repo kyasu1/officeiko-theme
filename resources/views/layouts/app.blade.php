@@ -5,7 +5,7 @@
 		@include('layouts.fb-share-button')
     @php(do_action('get_header'))
     @include('partials.header')
-    <div class="wrap container w-100 mw8-ns center-ns" role="document">
+    <div class="wrap container w-100 mw8-ns center-ns shadow-1" role="document">
       <div class="content">
         <main class="main">
           @yield('content')
