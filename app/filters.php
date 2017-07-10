@@ -73,13 +73,12 @@ add_filter('comments_template', 'App\\template_path');
 /**
  * Add rest api filter by custom field
  */
-add_filter('rest_stock_query', function($args) {
-  $args['meta_query'] = array(
-    array(
-      'key' => 'date',
-      'value' => esc_sql($_GET['date']),
-    )
-  );
-  return $args;
+add_filter('rest_stock_query', function ($args) {
+    $args['meta_query'] = array(
+        array(
+            'key' => 'date',
+            'value' => esc_sql($_GET['date']),
+        )
+    );
+    return $args;
 });
-
