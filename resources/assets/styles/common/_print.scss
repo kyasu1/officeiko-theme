@@ -1,0 +1,21 @@
+@media print {
+  .dn-p {
+    display: none;
+  }
+
+  .flex-row-p {
+    flex-direction: row;
+  }
+
+  .w-auto-p {
+    width: auto;
+  }
+
+  .mr2-p {
+    margin-right: 0.5rem;
+  }
+
+  ml2-p {
+    margin-left: 0.5rem;
+  }
+}

@@ -13,18 +13,18 @@
 
 <article @php(post_class())>
   <header>
-    <h1 class="entry-title">本日の貴金属価格表</h1>
+    <h1 class="entry-title tc">本日の貴金属価格表</h1>
+    <h4 class="tc">公表 {{ $stock['date'] }}</h4>
   </header>
-  <div>
-    <h4>公表価格 {{ $stock['date'] }}</h4>
-    <div class="flex flex-column flex-row-ns">
+  <div class="">
+    <div class="f5 f3-ns pa3 flex flex-column flex-row-ns flex-row-p justify-center">
       <div>金<span>{{ to_price($gd_price, "円", 0) }}</span>（前日比<span>{{the_field('gd_diff')}}</span>円）</div>
       <div>Pt<span>{{ to_price($pt_price, "円", 0) }}</span>（前日比<span>{{the_field('pt_diff')}}</span>円）</div>
       <div>銀<span>{{ to_price($sv_price, "円", 0) }}</span>（前日比<span>{{the_field('sv_diff')}}</span>円）</div>
     </div>
   </div>
-  <div class="flex flex-column flex-row-ns">
-    <table class="f5 f3-ns pa3 collapse" cellspacing="0">
+  <div class="flex flex-column flex-row-ns flex-row-p justify-center pa3">
+    <table class="f5 f3-ns pa3 collapse mr2-ns mr2-p w-100 w-auto-ns w-auto-p " cellspacing="0">
       <tbody>
         <tr><th class="ba pa2 tc" colspan="2">金スクラップ</th></tr>
         <?php foreach ($gd_label as $gd) { ?>
@@ -34,7 +34,7 @@
         <?php } ?>
       </tbody>
     </table>
-    <table class="f5 f3-ns pa3 collapse" cellspacing="0">
+    <table class="f5 f3-ns pa3 collapse ml2-ns ml2-p w-100 w-auto-ns w-auto-p" cellspacing="0">
       <tbody>
         <tr><th class="ba pa2 tc" colspan="2">Ptスクラップ</th></tr>
         <?php foreach ($pt_label as $pt) { ?>

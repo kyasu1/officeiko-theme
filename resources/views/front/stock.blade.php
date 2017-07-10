@@ -26,6 +26,7 @@
     <p class="ma0 pv1 tc">{{ $stock['date'] }}</p>
     <p class="ma0 pv1 tc">K24 {{ to_price( $stock['K24'], '円/g' ) }} Pt1000 {{ to_price( $stock['Pt1000'], '円/g' ) }}</p>
     <p class="ma0 pv1 tc">K18 {{ to_price( $stock['K18'], '円/g' ) }} Pt900  {{ to_price( $stock['Pt900'],  '円/g' ) }}</p>
+    <p class="ma0 pv1 tc"><a href="{{the_permalink()}}" class="link black ">その他の価格表はこちら</a></p>
   </div>
 </div>
 @php
