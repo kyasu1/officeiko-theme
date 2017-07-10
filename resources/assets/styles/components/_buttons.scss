@@ -1,0 +1,23 @@
+// Buttons
+
+// https://codemyui.com/simple-slideout-sidebar-menu/
+
+$easing: cubic-bezier(0.6, 0.05, 0.28, 0.91);
+
+#hamburger {
+  position: fixed;
+  z-index: 5;
+  top: 14px;
+  left: 11px;
+  cursor: pointer;
+  transition: left 500ms $easing;
+
+  div {
+    width: 35px;
+    height: 3px;
+    margin-bottom: 8px;
+    background-color: white;
+    transition: transform 500ms $easing, opacity 500ms, background-color 250ms;
+  }
+}
+
