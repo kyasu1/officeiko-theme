@@ -34,6 +34,6 @@ function calculate_stock($date, $gd, $pt, $sv) {
 }
 
 function to_price($num, $suffix = "", $precision = -1) {
-  return number_format(round($num, $precision)) . $suffix;
+  return number_format(round(floatval($num), $precision)) . $suffix;
 }
 ?>

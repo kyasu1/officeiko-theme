@@ -1,10 +1,14 @@
 @php
   include( get_template_directory() . '/views/utils.php' );
 
-  $gd_price = floatval(get_field('gd_price'));
-  $pt_price = floatval(get_field('pt_price'));
-  $sv_price = floatval(get_field('sv_price'));
-  $stock = calculate_stock(get_field('date'), get_field('gd_price'), get_field('pt_price'), get_field('sv_price'));
+  $date = get_post_meta(get_the_ID(), 'date', true);
+  $gd_price = get_post_meta(get_the_ID(), 'gd_price', true);
+  $pt_price = get_post_meta(get_the_ID(), 'pt_price', true);
+  $sv_price = get_post_meta(get_the_ID(), 'sv_price', true);
+  $gd_diff = get_post_meta(get_the_ID(), 'gd_diff', true);
+  $pt_diff = get_post_meta(get_the_ID(), 'pt_diff', true);
+  $sv_diff = get_post_meta(get_the_ID(), 'sv_diff', true);
+   $stock = calculate_stock($date, $gd_price, $pt_price, $sv_price);
 
   $gd_label = array('K24', 'K22', 'K21.6', 'K20', 'K18', 'K14', 'K10', 'K9');
   $pt_label = array('Pt1000', 'Pt950', 'Pt900', 'Pt850');
@@ -18,9 +22,9 @@
   </header>
   <div class="">
     <div class="f4 pa3 flex flex-column flex-row-ns flex-row-p justify-center">
-      <p class="tc ma2">金<span>{{ to_price($gd_price, "円", 0) }}</span>（前日比<span>{{the_field('gd_diff')}}</span>円）</p>
-      <p class="tc ma2">Pt<span>{{ to_price($pt_price, "円", 0) }}</span>（前日比<span>{{the_field('pt_diff')}}</span>円）</p>
-      <p class="tc ma2">銀<span>{{ to_price($sv_price, "円", 0) }}</span>（前日比<span>{{the_field('sv_diff')}}</span>円）</p>
+      <p class="tc ma2">金<span>{{ to_price($gd_price, "円", 0) }}</span>（前日比<span>{{$gd_diff}}</span>円）</p>
+      <p class="tc ma2">Pt<span>{{ to_price($pt_price, "円", 0) }}</span>（前日比<span>{{$pt_diff}}</span>円）</p>
+      <p class="tc ma2">銀<span>{{ to_price($sv_price, "円", 0) }}</span>（前日比<span>{{$sv_diff}}</span>円）</p>
     </div>
   </div>
   <div class="flex flex-column flex-row-ns flex-row-p justify-center pa3">
