@@ -7,14 +7,14 @@
     'orderby' => 'meta_value',
     'order' => 'DESC',
     'posts_per_page' => 1,
-    'meta_key' => 'date'
+    'meta_key' => 'stock_date'
   );
 
   $posts = new WP_Query( $args );
 
   while ( $posts->have_posts() ) : $posts->the_post();
     $stock = calculate_stock(
-      $posts->post->date,
+      $posts->post->stock_date,
       $posts->post->gd_price,
       $posts->post->pt_price,
       $posts->post->sv_price

@@ -1,0 +1,153 @@
+<?php
+
+namespace App;
+
+/**
+ * Theme customizer
+ */
+add_action('customize_register', function (\WP_Customize_Manager $wp_customize) {
+    // Add postMessage support
+    $wp_customize->get_setting('blogname')->transport = 'postMessage';
+    $wp_customize->selective_refresh->add_partial('blogname', [
+        'selector' => '.brand',
+        'render_callback' => function () {
+            bloginfo('name');
+        }
+    ]);
+});
+
+/**
+ * Customizer JS
+ */
+add_action('customize_preview_init', function () {
+    wp_enqueue_script('sage/customizer.js', asset_path('scripts/customizer.js'), ['customize-preview'], null, true);
+});
+
+/**
+ * Add Custom Post Type for Souba
+ */
+
+class CustomPostStock
+{
+    const METAS = array(
+        'stock_date' => '日付',
+        'gd_price' => '金価格',
+        'gd_diff' => '金前日比',
+        'pt_price' => 'Pt価格',
+        'pt_diff' => 'Pt前日比',
+        'sv_price' => '銀価格',
+        'sv_diff' => '銀前日比',
+    );
+
+    public function __construct()
+    {
+        add_action('init', array(&$this, 'RegisterPostType'));
+        add_action('rest_api_init', array(__CLASS__, 'RegisterRestField'));
+        add_action('admin_menu', array(__CLASS__, 'AddMetaBox'));
+        add_action('save_post', array(__CLASS__, 'Save'));
+     }
+
+    public function RegisterPostType()
+    {
+        $labels = array(
+            'name'               => _x('相場', 'post type general name'),
+            'singular_name'      => _x('相場', 'post type singular name'),
+            'menu_name'          => _x('相場', 'admin menu'),
+            'name_admin_bar'     => _x('相場を追加', 'add new on admin bar'),
+            'add_new'            => _x('新規追加', 'book'),
+            'add_new_item'       => __('新規追加'),
+            'new_item'           => __('相場を追加'),
+            'edit_item'          => __('相場を編集'),
+            'view_item'          => __('相場を表示'),
+            'all_items'          => __('全相場を表示'),
+            'search_items'       => __('相場を検索'),
+            'not_found'          => __('見つかりませんでした。'),
+            'not_found_in_trash' => __('ゴミ箱にはありません。')
+        );
+    
+        $args = array(
+            'labels'             => $labels,
+            'description'        => __('説明.'),
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'rewrite'            => array('slug' => 'stock'),
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'show_in_rest'       => true,
+            'rest_base'          => 'stocks',
+            'rest_controller_class' => 'WP_REST_Posts_Controller',
+            'supports'           => array('title', 'author')
+        );
+        register_post_type('stock', $args);
+    }
+
+    public function RegisterRestField()
+    {
+        register_rest_field(
+            'stock',
+            'stock_meta',
+            array(
+                'get_callback' => function (
+                    $object
+                ) {
+                    return get_post_meta($object[ 'id' ]);
+                },
+                'update_callback' => function (
+                    $meta,
+                    $object
+                ) {
+                    foreach ($meta as $data) {
+                        update_post_meta($object[ 'id' ], $data['key'], $data['value']);
+                    }
+                },
+                'schema' => null
+            )
+        );
+    }
+
+    public function AddMetaBox()
+    {
+        foreach ($class::METAS as $meta) {
+            $field = meta['key'];
+            add_meta_box(
+                $field,
+                $meta['value'],
+                function ($post) {
+                    $value = get_post_meta($post->ID, $field, true);
+                    echo "<input name='$field' style='width: 100%;' value='$value' />";
+                },
+                'stock',
+                'normal'
+            );
+        }
+    }
+
+    public function Save($post_id) {
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return;
+        }
+     
+        foreach ($this->$metas as $meta) {
+            $field = $meta['key'];
+    
+            if (isset($_POST[$field])) {
+                $value = sanitize_text_field($_POST[$field]);
+            } else {
+                $value = '';
+            }
+            
+            if (strcmp($value, get_post_meta($post_id, $field, true)) != 0) {
+                update_post_meta($post_id, $field, $value);
+            } elseif ($value == '') {
+                delete_post_meta($post_id, $field, get_post_meta($post_id, $field, true));
+            }
+        }
+    }
+}
+
+new CustomPostStock();
