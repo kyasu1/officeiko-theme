@@ -3,7 +3,7 @@
   $next = strtotime( '+1 month', $ts );
 @endphp
 
-<div class="f5 fw5 bg-tea-green white pt2 pb3">
+<div id="calendar" class="f5 fw5 bg-tea-green white pt2 pb3">
   <div class="w-80 center washed-yellow pt2">
     <p class="f3 f2-ns b ma0 pv2 tc gold ba">
       <span class="gold">夏季休業のお知らせ</span></p>

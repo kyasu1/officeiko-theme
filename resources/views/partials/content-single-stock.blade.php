@@ -17,39 +17,64 @@
 
 <article @php(post_class("mv3")) >
   <header>
-    <h1 class="entry-title tc pt4">本日の貴金属価格表</h1>
-    <h4 class="tc f4 f3-ns">公表 {{ $stock['date'] }}</h4>
+    <h1 class="ma0 entry-title tc pv4">本日の貴金属価格表</h1>
+    <h4 class="ma0 tc f4 f3-ns">公表 {{ $stock['date'] }}</h4>
   </header>
-  <div class="">
-    <div class="f4 pa3 flex flex-column flex-row-ns justify-center">
-      <p class="tc ma2">金<span>{{ to_price($gd_price, "円", 0) }}</span>（前日比<span>{{$gd_diff}}</span>円）</p>
-      <p class="tc ma2">Pt<span>{{ to_price($pt_price, "円", 0) }}</span>（前日比<span>{{$pt_diff}}</span>円）</p>
-      <p class="tc ma2">銀<span>{{ to_price($sv_price, "円", 0) }}</span>（前日比<span>{{$sv_diff}}</span>円）</p>
-    </div>
+  <div class="tc">
+    <table class="f4 dib code">
+        <tr>
+            <td class="pa2 tl">金</td>
+            <td class="pa2 tr">{{ to_price($gd_price, "円", 0) }}</td>
+            <td class="pa2 tl">(前日比</td>
+            <td class="pa2 tr">{{ add_sign($gd_diff) }}円)</td>
+        </tr>
+        <tr>
+            <td class="pa2 tl">プラチナ</td>
+            <td class="pa2 tr">{{ to_price($pt_price, "円", 0) }}</td>
+            <td class="pa2 tl">(前日比</td>
+            <td class="pa2 tr">{{ add_sign($pt_diff) }}円)</td>
+        </tr>
+        <tr>
+            <td class="pa2 tl">銀</td>
+            <td class="pa2 tr">{{ to_price($sv_price, "円", 0) }}</td>
+            <td class="pa2 tl">(前日比</td>
+            <td class="pa2 tr">{{ add_sign($sv_diff) }}円)</td>
+        </tr>
+    </table>
   </div>
-  <div class="flex flex-column flex-row-ns flex-row-p justify-center pa3">
-    <table class="f5 f3-ns pa3 collapse mr2-ns mr2-p w-100 w-auto-ns w-auto-p " cellspacing="0">
+  <h2 class="tc">当社での買取金額および融資金額（1gあたり・税込）</h2>
+  <div class="flex flex-column flex-row-l flex-row-p justify-center items-center pa3">
+    <table class="f5 f3-ns f2-p pa3 collapse mr2-l mr2-p w-100 w-auto-l w-auto-p " cellspacing="0">
       <tbody>
-        <tr><th class="ba tc pa0" colspan="2"><div class="pa2 bg-gold washed-yellow">金製品</div></th></tr>
+        <tr><th class="ba tc pa0" colspan="3"><div class="pa2 bg-gold washed-yellow">金製品</div></th></tr>
+        <tr><td class="ba"></td><td class="ba pv2 tc">買取金額</td><td class="ba pv2 tc">融資金額</td></tr>
         <?php foreach ($gd_label as $gd) { ?>
         <tr>
-          <th class="ba pa2 tl w4">{{ $gd }}</th><td class="ba pa2 pl4 tr">{{ to_price( $stock[$gd], "円/g" ) }}</td>
+          <th class="ba pa2 tl w4-ns">{{ $gd }}</th>
+          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$gd], "円/g" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$gd], "円/g" ) }}</td>
         </tr>
         <?php } ?>
       </tbody>
     </table>
-    <table class="f5 f3-ns pa3 collapse ml2-ns ml2-p w-100 w-auto-ns w-auto-p" cellspacing="0">
+    <table class="f5 f3-ns pa3 collapse ml2-l ml2-p w-100 w-auto-l w-auto-p justify" cellspacing="0">
       <tbody>
-        <tr><th class="ba tc pa0" colspan="2"><div class="pa2 bg-light-silver washed-yellow">プラチナ製品</div></th></tr>
+        <tr><th class="tc pa0 br bl bb bt-l" colspan="3"><div class="pa2 bg-light-silver washed-yellow">プラチナ製品</div></th></tr>
+        <tr><td class="ba"></td><td class="ba pv2 tc">買取金額</td><td class="ba pv2 tc">融資金額</td></tr>
         <?php foreach ($pt_label as $pt) { ?>
         <tr>
-          <th class="ba pa2 tl w4">{{ $pt }}</th><td class="ba pa2 pl4 tr">{{ to_price( $stock[$pt], "円/g" ) }}</td>
+          <th class="ba pa2 tl w4-ns">{{ $pt }}</th>
+          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$pt], "円/g" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$pt], "円/g" ) }}</td>
         </tr>
         <?php } ?> 
-        <tr><th class="ba tc pa0" colspan="2"><div class="pa2 bg-silver washed-yellow">銀製品</div></th></tr>
+        <tr><th class="ba tc pa0" colspan="3"><div class="pa2 bg-silver washed-yellow">銀製品</div></th></tr>
+        <tr><td class="ba"></td><td class="ba pv2 tc">買取金額</td><td class="ba pv2 tc">融資金額</td></tr>
         <?php foreach ($sv_label as $sv) { ?>
         <tr>
-          <th class="ba pa2 tl w4">{{ $sv }}</th><td class="ba pa2 pl4 tr">{{ to_price( $stock[$sv], "円/g" ) }}</td>
+          <th class="ba pa2 tl w4-ns">{{ $sv }}</th>
+          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$sv], "円/g" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$sv], "円/g" ) }}</td>
         </tr>
         <?php } ?> 
        </tbody>

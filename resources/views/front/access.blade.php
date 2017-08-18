@@ -1,4 +1,4 @@
-<div class="f6 f3-ns fw5 bg-wasabi-green black pv3">
+<div id="access" class="f6 f3-ns fw5 bg-wasabi-green black pv3">
   <div class="w-90 center">
     <p class="f3 f2-ns b ma0 tc">アクセス</p>
     <hr />

@@ -29,8 +29,23 @@
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+//  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   //  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont,
+               "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  /*  フォントのサイズ  */
+  font-size: 16px;
+  
+  /*  フォントの色  */
+  font-size: #333;
+  
+  /* カーニングの設定 */
+  letter-spacing: 1.5px;
+  font-feature-settings: "palt" 1;
+  font-kerning: auto;
+  
+  /* 行間の設定 */
+  line-height: 1.75;
 }
 
 /* IE10以上 */
@@ -54,4 +69,9 @@ html {
 
 .shadow-white {
   text-shadow: 2px 2px 2px #fff, -2px 2px 2px #fff, 2px -2px 2px #fff, -2px -2px 2px #fff;
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
