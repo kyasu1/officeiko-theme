@@ -6,8 +6,8 @@
 <div id="calendar" class="f5 fw5 bg-tea-green white pt2 pb3">
   <div class="w-80 center washed-yellow pt2">
     <p class="f3 f2-ns b ma0 pv2 tc gold ba">
-      <span class="gold">夏季休業のお知らせ</span></p>
-    <p class="f5 f3-ns ma0 pv2 tc">8月2日(水)から8月9日(水)まで</p>
+      <span class="gold">定休日のお知らせ</span></p>
+    <p class="f5 f3-ns ma0 pv2 tc">ピンク色の部分が定休日となります</p>
   </div>
   <div class="flex justify-around">
     <div class="w-50 mw5-ns">

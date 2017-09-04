@@ -57,9 +57,9 @@
         <?php } ?>
       </tbody>
     </table>
-    <table class="f5 f3-ns pa3 collapse ml2-l ml2-p w-100 w-auto-l w-auto-p justify" cellspacing="0">
+    <table class="f5 f3-ns f2-p pa3 collapse ml2-l ml2-p w-100 w-auto-l w-auto-p justify" cellspacing="0">
       <tbody>
-        <tr><th class="tc pa0 br bl bb bt-l" colspan="3"><div class="pa2 bg-light-silver washed-yellow">プラチナ製品</div></th></tr>
+        <tr><th class="tc pa0 br bl bb bt-l bt-p" colspan="3"><div class="pa2 bg-light-silver washed-yellow">プラチナ製品</div></th></tr>
         <tr><td class="ba"></td><td class="ba pv2 tc">買取金額</td><td class="ba pv2 tc">融資金額</td></tr>
         <?php foreach ($pt_label as $pt) { ?>
         <tr>

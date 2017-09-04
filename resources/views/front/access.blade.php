@@ -5,8 +5,8 @@
   </div>
   <div id="map" class="mw-100 h-25 overflow-hidden"> </div>
   <div class="tr pr2">
-    <a class="link black" href="https://www.google.com/maps/place/%E8%B3%AA%E3%82%A4%E3%82%B3%E3%83%BC/@35.866429,139.77754,17z/data=!3m1!4b1!4m5!3m4!1s0x60189684c5a656c5:0xce45f80ac0cce0dc!8m2!3d35.866429!4d139.779734" target="_blank">
-      アプリで開く
+    <a class="link black f6" href="https://www.google.com/maps/place/%E8%B3%AA%E3%82%A4%E3%82%B3%E3%83%BC/@35.866429,139.77754,17z/data=!3m1!4b1!4m5!3m4!1s0x60189684c5a656c5:0xce45f80ac0cce0dc!8m2!3d35.866429!4d139.779734" target="_blank">
+      大きな地図で開く
     </a>
   </div>
   <div class="w-90 center pv1">

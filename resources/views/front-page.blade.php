@@ -16,7 +16,12 @@
       <p class="ma0 pv2 tc">お金をお貸し致します</p>
       <p class="ma0 pv2 tc">質料もリーズナブルな設定です</p>
       <p class="ma0 pv2 tc">審査や取立の無い安心なシステム</p>
-      <p class="ma0 pt2 tc">お品物の価値の範囲内で即ご融資</p>
+      <p class="ma0 pv2 tc">お品物の価値の範囲内で即ご融資</p>
+      <p class="ma0 pv3 tc">
+          <span class="ba bw1 pa2 dim">
+              <a href="/pawn" class="link washed-yellow">詳しくはこちら</a>
+          </span>
+      </p>
     </div>
   </div>
   <div class="f5 f3-ns fw5 bg-washed-yellow tea-green pv3">
@@ -27,7 +32,7 @@
       <p class="ma0 pv2 tc">新機種の購入資金に即売却が有効です</p>
       <p class="ma0 pv2 tc">終活のご相談の方も増えています</p>
       <p class="ma0 pv2 tc">下取りならばさらに査定アップ</p>
-      <p class="ma0 pt2 tc">売りになりたくない場合は質融資も</p>
+      <p class="ma0 pt2 tc">売りたくない場合は質融資も</p>
     </div>
   </div>
   @include('front.stock')

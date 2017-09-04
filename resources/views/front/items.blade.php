@@ -6,7 +6,7 @@
   <div>
     <div class="flex justify-between">
       <div class="w-third relative">
-        <a href="/item/watch" class="link">
+        <a href="/item/watch" class="link dim">
  					<img src="@asset('images/watch.jpg')"
 							 srcset="@asset('images/watch.jpg') 1x, @asset('images/watch@2x.jpg') 2x"
 							 alt="時計"
@@ -15,7 +15,7 @@
         </a>
       </div>
       <div class="w-third relative">
-        <a href="/item/jewelry" class="link">
+        <a href="/item/jewelry" class="link dim">
 					<img src="@asset('images/jewelry.jpg')"
 							 srcset="@asset('images/jewelry.jpg') 1x, @asset('images/jewelry@2x.jpg') 2x"
 							 alt="ジュエリー"
@@ -24,7 +24,7 @@
         </a>
       </div>
       <div class="w-third relative">
-        <a href="/item/bag" class="link">
+        <a href="/item/bag" class="link dim">
  					<img src="@asset('images/bag.jpg')"
 							 srcset="@asset('images/bag.jpg') 1x, @asset('images/bag@2x.jpg') 2x"
 							 alt="ブランド品"
@@ -37,7 +37,7 @@
   <div>
     <div class="flex justify-between">
       <div class="w-third relative">
-        <a href="/item/diamond" class="link">
+        <a href="/item/diamond" class="link dim">
  					<img src="@asset('images/diamond.jpg')"
 							 srcset="@asset('images/diamond.jpg') 1x, @asset('images/diamond@2x.jpg') 2x"
 							 alt="ダイヤモンド"
@@ -46,7 +46,7 @@
         </a>
       </div>
       <div class="w-third relative">
-        <a href="/item/camera" class="link">
+        <a href="/item/camera" class="link dim">
  					<img src="@asset('images/camera.jpg')"
 							 srcset="@asset('images/camera.jpg') 1x, @asset('images/camera@2x.jpg') 2x"
 							 alt="カメラ"
@@ -55,7 +55,7 @@
         </a>
       </div>
       <div class="w-third relative">
-        <a href="/item/gadget" class="link">
+        <a href="/item/gadget" class="link dim">
  					<img src="@asset('images/gadget.jpg')"
 							 srcset="@asset('images/gadget.jpg') 1x, @asset('images/gadget@2x.jpg') 2x"
 							 alt="スマホ等"
@@ -68,7 +68,7 @@
   <div>
     <div class="flex justify-between">
       <div class="w-third relative">
-        <a href="/item/ticket" class="link">
+        <a href="/item/ticket" class="link dim">
  					<img src="@asset('images/ticket.jpg')"
 							 srcset="@asset('images/ticket.jpg') 1x, @asset('images/ticket@2x.jpg') 2x"
 							 alt="金券・切手"
@@ -77,7 +77,7 @@
         </a>
       </div>
       <div class="w-third relative">
-        <a href="/item/tool" class="link">
+        <a href="/item/tool" class="link dim">
  					<img src="@asset('images/tool.jpg')"
 							 srcset="@asset('images/tool.jpg') 1x, @asset('images/tool@2x.jpg') 2x"
 							 alt="電動工具"
@@ -86,7 +86,7 @@
         </a>
       </div>
       <div class="w-third relative">
-        <a href="/item/golf" class="link">
+        <a href="/item/golf" class="link dim">
  					<img src="@asset('images/golf.jpg')"
 							 srcset="@asset('images/golf.jpg') 1x, @asset('images/golf@2x.jpg') 2x"
 							 alt="ゴルフ用品"
