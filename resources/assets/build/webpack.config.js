@@ -22,7 +22,9 @@ let webpackConfig = {
     publicPath: config.publicPath,
     filename: `scripts/${assetsFilenames}.js`,
   },
-  module: {
+	module: {
+		noParse: /\.elm$/,
+
     rules: [
       {
         enforce: 'pre',
@@ -35,7 +37,24 @@ let webpackConfig = {
         exclude: [/(node_modules|bower_components)(?![/|\\](bootstrap|foundation-sites))/],
         loader: 'buble',
         options: { objectAssign: 'Object.assign' },
-      },
+			},
+			{
+				test: /\.elm$/,
+				exclude: [/elm-stuff/, /node_modules/],
+				use: [
+				{
+					loader: 'elm-hot-loader',
+				},
+				{
+					loader: 'elm-webpack-loader',
+					options: {
+						verbose: true,
+						warn: true,
+						debug: process.env.ELM_DEBUGGER === 'false' ? false : true,
+						foreWatch: true,
+					},
+				}],
+			},
       {
         test: /\.css$/,
         include: config.paths.assets,

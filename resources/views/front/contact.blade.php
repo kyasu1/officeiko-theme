@@ -10,7 +10,7 @@
 		</div>
   </div>
   <div class="w-80 center">
-    <a href="" class="link white">
+    <a href="/contact" class="link white">
       <p class="f4 b ma0 tc ba br2 pa1">
         お問い合わせフォーム
       </p>

@@ -51,8 +51,8 @@
         <?php foreach ($gd_label as $gd) { ?>
         <tr>
           <th class="ba pa2 tl w4-ns">{{ $gd }}</th>
-          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$gd], "円/g" ) }}</td>
-          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$gd], "円/g" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$gd], "円" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$gd], "円" ) }}</td>
         </tr>
         <?php } ?>
       </tbody>
@@ -64,8 +64,8 @@
         <?php foreach ($pt_label as $pt) { ?>
         <tr>
           <th class="ba pa2 tl w4-ns">{{ $pt }}</th>
-          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$pt], "円/g" ) }}</td>
-          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$pt], "円/g" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$pt], "円" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$pt], "円" ) }}</td>
         </tr>
         <?php } ?> 
         <tr><th class="ba tc pa0" colspan="3"><div class="pa2 bg-silver washed-yellow">銀製品</div></th></tr>
@@ -73,8 +73,8 @@
         <?php foreach ($sv_label as $sv) { ?>
         <tr>
           <th class="ba pa2 tl w4-ns">{{ $sv }}</th>
-          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$sv], "円/g" ) }}</td>
-          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$sv], "円/g" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['sell'][$sv], "円" ) }}</td>
+          <td class="ba pa2 tr code">{{ to_price( $stock['pawn'][$sv], "円" ) }}</td>
         </tr>
         <?php } ?> 
        </tbody>
